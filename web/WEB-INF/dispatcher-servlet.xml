@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <context:component-scan base-package="controllers"/>
+    <mvc:annotation-driven/>
+    
+    <bean id="springDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close" >
+        <property name="url" value="jdbc:mysql://mysql2.cs.stonybrook.edu/dalui" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="username" value="dalui" />
+        <property name="password" value="108131154" />
+        <property name="initialSize" value="2" />
+        <property name="maxTotal" value="10" />
+    </bean>
+    
+<!--    <bean id="springDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close" >
+        <property name="url" value="jdbc:mysql://localhost/samdango" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="username" value="root" />
+        <property name="password" value="1234" />
+        <property name="initialSize" value="10" />
+        <property name="maxTotal" value="30" />
+    </bean> 
+    -->
+<!--    <import resource="daos.xml"/>
+    <import resource="managers.xml"/>
+    <import resource="controllers.xml"/>-->
+    
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+    
+    <bean id="loginController" class="controllers.LoginController">
+        <property name="customerDAO">
+            <ref bean ="customerDAO"></ref>
+        </property>
+        <property name="circleDAO">
+            <ref bean ="circleDAO"></ref>
+        </property>
+    </bean>
+    
+    <bean id="customerDAO" class="dao.CustomerDAO">
+        <property name="dataSource" ref="springDataSource"/>
+    </bean>
+    
+    <bean id="circleDAO" class="dao.CircleDAO">
+        <property name="dataSource" ref="springDataSource"/>
+    </bean>
+    
+    <bean id="indexController" class="controllers.IndexController">
+ 
+    </bean>
+
+    <bean id="circleController" class="controllers.CircleController">
+        <property name="circleDAO">
+            <ref bean ="circleDAO"></ref>
+        </property>
+    </bean>    
+</beans>
