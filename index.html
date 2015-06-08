@@ -24,62 +24,81 @@
 		table, td {
 			border: 1px solid black;
 			background-color: black;
-			
+		}
+		body {
+			<!-- line-height: 1.5; -->
+			<!-- 	background-size: cover;
+			background: url(assets/img/newyork.jpg) no-repeat center center fixed ; 
+			background-size: 100% auto; -->
+
+		}
+		html {
+			background: url(assets/img/newyork.jpg) no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		
+		}
+		.cover-container{
+			width: 520px;
+			margin-top: 50px;
+			background: rgba(0,0,0,0.5);
 		}
 
 	</style>
 
   </head>
+  <body>
       <!-- Static masthead -->
     <nav class="navbar navbar-masthead navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="index.html">David Lui</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
+            <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+        </ul>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resume.html">Resume</a></li>
 			<li><a href="projects.html">Projects</a></li>
 			<li><a href="contact.html">Contact</a></li>
+			</ul>
 		</div>
+		
       </div>
     </nav>
 	
 	<br>
-
+	
 	<div class="container">
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-			
-		<br><br><br>
+			<br>
         <div class="inner cover">
             <h1 class="cover-heading"><b>Hello World</b></h1>            
 			<hr width=75%>
             <img height="420" width="470" src ='assets/img/dog2.jpg'></img>
             <hr width=75%>
 			<p class="lead">This is David Lui making a personal webpage. Watch my progress!</p>
-		
 		</div>
-		<br><br><br><br>
-			
-		<p><center><font color="gray">David Lui 2015</font></center></p>
-
         </div>
       </div>
     </div>
 	</div>
-
+	</body>
     <footer>
-	
+	<nav class="navbar navbar-masthead navbar-inverse navbar-fixed-bottom">
+        <div id="navbar-bottom" class="navbar-collapse collapse">
+			<p><center><font color="white">David Lui 2015</font></center></p>
+		</div>
+    </nav>
 	</footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
