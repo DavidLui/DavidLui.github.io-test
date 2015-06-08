@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>About Me</title>
-
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/responsive.css">
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/cover.css" rel="stylesheet">
@@ -45,7 +46,17 @@
 			margin-top: 50px;
 			background: rgba(0,0,0,0.5);
 		}
-
+		.divider-vertical {
+			height: 50px;
+			margin: 0 9px;
+			border-left: 1px solid gray;
+			border-right: 1px solid gray;
+		}
+		.rightbar{
+			margin-top: 7px;
+			margin-right: 20px;
+		}
+	
 	</style>
 
   </head>
@@ -54,13 +65,26 @@
     <nav class="navbar navbar-masthead navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="index.html">David Lui</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
-            <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+			<div class="rightbar">
+            <li>
+			<a href="https://www.facebook.com/david.lui.712"><img hspace=5 height="35" width="35" src ='assets/img/facebook_icon.png'></img></a>
+			<a href="https://www.linkedin.com/profile/view?id=246811667"><img hspace=5 height="35" width="35" src ='assets/img/linkedin_icon.png'></img></a>
+			<a href="https://github.com/DavidLui"><img hspace=5 height="35" width="35" src ='assets/img/github_icon.png'></img></a>
+
+			</li>
+			</div>
+
         </ul>
+		
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Home</a></li>
