@@ -1,8 +1,9 @@
 
 		table, td {
 			border: 1px solid black;
-			background-color: black;
+			/* background-color: black; */
 		}
+
 		body {
 			<!-- line-height: 1.5; -->
 			<!-- 	background-size: cover;
