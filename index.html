@@ -61,10 +61,17 @@
 	<!-- NAVBAR END -->
 	
 	<div class="container">
+
     <div class="site-wrapper" style="margin-top: 50px;">
       <div class="site-wrapper-inner">
         <div class="cover-container" style="width:70%;" style="margin-top: 20px;">
 			<br>
+      <div id="test1">
+        <button class="submit-order" onClick="parent.location='http://www.yahoo.com/'">test</button>
+        <br>
+        <button class="submit-order" onClick="parent.location='http://www.google.com/'">test</button>
+      </div>
+
         <div class="inner cover">
 		<br><br>
             <h1 style="font-size:50px" class="cover-heading"><b>Hello World!</b></h1>            
@@ -78,18 +85,27 @@
         </div>
       </div>
     </div>
-	
+
     <footer>
 	<nav style="margin-bottom: -15px;" class="navbar navbar-masthead navbar-inverse navbar-fixed-bottom">
 			<center><font color="white"><p style="margin:7px;">David Lui 2015</p></font></center>
     </nav>
 	</footer>
 
-
+    
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
+
+    <script>
+
+    $(document).ready(function(){
+      $("#test5").click(function() {
+        $("#test1").fadeOut();
+      });
+    })
+    </script>
   </body>
 </html>
