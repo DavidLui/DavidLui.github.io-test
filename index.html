@@ -66,15 +66,19 @@
       <div class="site-wrapper-inner">
         <div class="cover-container" style="width:70%;" style="margin-top: 20px;">
 			<br>
-
+      <div id="test1">
+        <button class="submit-order" onClick="removeone()">test</button>
+        <br>
+        <button class="submit-order" onClick="removetwo()">test</button>
+      </div>
 
         <div class="inner cover">
 		<br><br>
-            <h1 style="font-size:50px" class="cover-heading"><b>Hello World!</b></h1>            
+            <h1 id = "removetwo" style="font-size:50px" class="cover-heading"><b>Hello World!</b></h1>            
 			<hr width=75%>
             <img class="dog" alt="dog" style="width:100%;" src ='assets/img/dog2.jpg'></img>
             <hr width=75%>
-			<p style="font-size:30px;" class="lead">This is David Lui. Welcome to my personal page!</p>
+			<p id="remove" style="font-size:30px;" class="lead">This is David Lui. Welcome to my personal page!</p>
 			<br><br><br><br>
 			
 		</div>
@@ -96,7 +100,13 @@
     <script src="assets/js/bootstrap.min.js"></script>
 
     <script>
+function removeone(){
+document.getElementById("remove").style.visibility = "hidden"
 
+}
+function removetwo(){
+document.getElementById("removetwo").style.visibility = "hidden"
+}
     $(document).ready(function(){
       $("#test5").click(function() {
         $("#test1").fadeOut();
